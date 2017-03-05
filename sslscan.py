@@ -1,18 +1,20 @@
 # sslscan.py | scans a list of domains using qualys SSLlabs scanner API
 
-# TODO take any file using arguments
-
 from ssllabsscanner import *
 from termcolor import colored
 import sys
 
-with open('domains') as f:
-    domains = f.readlines()
+if sys.argv[1] == '-f' or sys.argv[1] == '--file':
+    with open(sys.argv[2]) as f:
+        domains = f.readlines()
 
-# Strip whitespace
-domains = [x.strip() for x in domains]
-# Remove empty list elements
-domains = list(filter(None, domains))
+    # Strip whitespace
+    domains = [x.strip() for x in domains]
+    # Remove empty list elements
+    domains = list(filter(None, domains))
+else:
+    print('Please specify a file with \'-f\' option')
+    sys.exit(1)
 
 for domain in domains:
 
