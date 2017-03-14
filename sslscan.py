@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # sslscan.py | scans a list of domains using qualys SSLlabs scanner API
 
 from ssllabsscanner import *
