@@ -27,7 +27,7 @@ for domain in domains:
     if scan['endpoints'][0]['grade'] != 'A+':
         print(colored(domain + ' recieved a grade below A+, please check for details here: ' + details, 'red'))
     elif scan['endpoints'][0]['grade'] == 'A+':
-        print(colored('Scan returned desired A+ grade for ' + domain + '\n', 'green'))
+        print(colored('Scan returned optimal A+ grade for ' + domain + '\n', 'green'))
     else:
         print(colored('Unknown grade recieved.. Please check details here: ' + details + '\n', 'red'))
 
